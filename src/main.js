@@ -3,8 +3,9 @@ import ReactDOM from 'react-dom'
 import createBrowserHistory from 'history/lib/createBrowserHistory'
 import { useRouterHistory } from 'react-router'
 import { syncHistoryWithStore } from 'react-router-redux'
-import createStore from './store/createStore'
+import createStore from './store/createstore'
 import AppContainer from './containers/AppContainer'
+import sagas from './store/sagas'
 
 // ========================================================
 // Browser History Setup
@@ -25,6 +26,8 @@ const store = createStore(initialState, browserHistory)
 const history = syncHistoryWithStore(browserHistory, store, {
   selectLocationState: (state) => state.router
 })
+
+store.runSagas(sagas);
 
 // ========================================================
 // Developer Tools Setup
