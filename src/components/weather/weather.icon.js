@@ -4,11 +4,9 @@ import Skycons from 'skycons'
 export class WeatherIcon extends React.Component{
   componentDidMount(){
     let { id, name } = this.props;
-    window.setTimeout(function(){
-      let skycons = new Skycons({'color': 'gray'});
-      skycons.add(id, name);
-      skycons.play();
-    }, 200);
+    let skycons = new Skycons({'color': 'gray'});
+    skycons.add(id, name);
+    skycons.play();
   }
   render(){
     let width = this.props.size == 'larget' ? 128 : 64

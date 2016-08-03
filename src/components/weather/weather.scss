@@ -1,3 +1,6 @@
 ul { list-style: none }
 li {cursor: pointer}
-.weather-temp{display:inline-block;}
+.weather-temp{
+  display:inline-block;
+  margin-right: 10px;
+}
