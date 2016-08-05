@@ -5,7 +5,7 @@ const defaultState = {
   }
 }
 
-export default function images(state = defaultState, action) {
+export default function locations(state = defaultState, action) {
   switch(action.type) {
     case 'LOCATIONS_GET_SUCCEEDED':
       return {...state, locations: action.locations.predictions}
